@@ -1,1 +1,4 @@
-# react-portfolio
+
+## How to use
+- npm install
+- npm start
