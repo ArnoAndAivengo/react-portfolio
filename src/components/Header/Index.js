@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link, animateScroll as scroll } from "react-scroll";
 import { Link as LinkRouter } from 'react-router-dom'
 
+import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
+
 import "./Header.scss"
 
 class Header extends Component {
@@ -16,54 +18,56 @@ class Header extends Component {
 
     return (
       <React.Fragment>
-        <header id="home">
-           <nav id="nav-wrap">
-              <ul id="nav" className="nav">
-                 <li className="nav-item">
-                   <Link
-                     activeClass="active"
-                     click=""
-                     to="home"
-                     spy={true}
-                     smooth={true}
-                     offset={-170}
-                     duration={500}>
-                     Home
-                   </Link>
-                 </li>
-                 <li className="nav-item">
-                   <Link
-                     activeClass="active"
-                     to="about"
-                     spy={true}
-                     smooth={true}
-                     offset={-170}
-                     duration={500}>
-                     About
-                   </Link>
-                 </li>
-                 <li className="nav-item">
-                   <Link
-                     activeClass="active"
-                     to="resume"
-                     spy={true}
-                     smooth={true}
-                     offset={-170}
-                     duration={500}>
-                     Resume
-                   </Link>
-                 </li>
-                 <li className="nav-item">
-                   <Link
-                     activeClass="active"
-                     to="portfolio"
-                     spy={true}
-                     smooth={true}
-                     offset={-170}
-                     duration={500}>
-                     Portfolio
-                   </Link>
-                 </li>
+        <header id="home" className="header">
+          <Navbar fixed="top" bg="dark" expand="lg">
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center" >
+              <Nav activeKey="/home">
+                <li className="nav-item">
+                  <Link
+                    activeClass="active"
+                    click=""
+                    to="home"
+                    spy={true}
+                    smooth={true}
+                    offset={-170}
+                    duration={500}>
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    activeClass="active"
+                    to="about"
+                    spy={true}
+                    smooth={true}
+                    offset={-170}
+                    duration={500}>
+                    About
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    activeClass="active"
+                    to="resume"
+                    spy={true}
+                    smooth={true}
+                    offset={-170}
+                    duration={500}>
+                    Resume
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    activeClass="active"
+                    to="portfolio"
+                    spy={true}
+                    smooth={true}
+                    offset={-170}
+                    duration={500}>
+                    Portfolio
+                  </Link>
+                </li>
                 <li className="nav-item">
                   <LinkRouter
                     activeClass="active"
@@ -71,20 +75,22 @@ class Header extends Component {
                     Full Portfolio
                   </LinkRouter>
                 </li>
-              </ul>
-           </nav>
-
-           <div className="row banner">
-              <div className="banner-text">
-                 <img className="profile-pic" src={resumeData.photo} alt="" />
-                 <div className="banner-container">
-                   <h1 className="responsive-headline">{resumeData.name}</h1>
-                   natalyaPhoto.jpeg<h3 style={{color:'#fff', fontFamily:'sans-serif '}}>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+          <Container>
+            <Row>
+              <div className="contact">
+                 <img className="contact-img" src={resumeData.photo} alt="" />
+                 <div className="contact-panel">
+                   <h1>{resumeData.name}</h1>
+                   <h3>
                      Я {resumeData.role}. {resumeData.roleDescription} {getYear(2016, 1, 1)} лет. {resumeData.roleDescription_1}
                    </h3>
                  </div>
               </div>
-           </div>
+            </Row>
+          </Container>
         </header>
       </React.Fragment>
     );

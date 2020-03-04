@@ -5,12 +5,14 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import Routes from 'routes'
 
 import './resources/css/index.css';
-import './resources/css/default.css';
-import './resources/css/fonts.css';
-import './resources/css/layout.css';
-import './resources/css/magnific-popup.css';
-import './resources/css/media-queries.css';
-import './resources/css/font-awesome/scss/font-awesome.scss';
+// import './resources/css/default.css';
+// import './resources/css/fonts.css';
+// import './resources/css/layout.css';
+// import './resources/css/magnific-popup.css';
+// import './resources/css/media-queries.css';
+// import './resources/css/font-awesome/scss/font-awesome.scss';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
